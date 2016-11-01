@@ -7,6 +7,5 @@ sed -i "s/worker_processes .*/worker_processes $procs;/g" /etc/nginx/nginx.conf
 # Setting the php-fpm server address and port
 sed -i "s/PHP_FPM_HOST/$PHP_FPM_HOST/g" /etc/nginx/conf.d/default.conf
 sed -i "s/PHP_FPM_PORT/$PHP_FPM_PORT/g" /etc/nginx/conf.d/default.conf
-sed -i "s/DOCUMENT_ROOT/$DOCUMENT_ROOT/g" /etc/nginx/conf.d/default.conf
 
 exec nginx -g "daemon off;"

@@ -1,7 +1,7 @@
 server {
     listen 80;
     charset utf-8;
-    root DOCUMENT_ROOT;
+    root /var/www/public;
     index index.html index.htm index.php;
 
     location = /favicon.ico { access_log off; log_not_found off; }
