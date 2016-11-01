@@ -1,7 +1,7 @@
 server {
     listen 80;
     charset utf-8;
-    root /var/www/public;
+    root DOCUMENT_ROOT;
     index index.html index.htm index.php;
 
     location = /favicon.ico { access_log off; log_not_found off; }
@@ -20,7 +20,7 @@ server {
 
     location ~ \.php$ {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass php:9000;
+        fastcgi_pass PHP_FPM_HOST:PHP_FPM_PORT;
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME /var/www/html/public/$fastcgi_script_name;
